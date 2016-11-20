@@ -1,0 +1,47 @@
+.hero--full {
+  margin: $mg--lg 0 $mg--lg;
+  h2 {
+    font-size: 36px;
+  }
+  @media (min-width: $medium) {
+    h2 {
+      font-size: 48px;
+    }
+  }
+  @media (min-width: $large) {
+    margin-top: $mg--x-lg;
+    h2 {
+      font-size: 60px;
+    }
+  }
+}
+
+.carousel--full,
+.grid--full {
+  margin-bottom: $mg--lg;
+  .carousel__element,
+  .grid__element {
+    margin: 0 auto;
+  }
+}
+
+.carousel__element {
+  &:focus {
+    outline: none;
+  }
+}
+
+.more--full {
+  margin: 0 0 $mg--x-lg;
+}
+
+.about--full {
+  margin: 0 0 $mg--x-lg;
+  @media (min-width: $large) {
+    margin-bottom: $mg--xx-lg;
+  }
+  h5 {
+    color: $blue-grey;
+    margin-top: $mg--md;
+  }
+}

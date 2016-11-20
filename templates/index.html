@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from 'macros.html' import cause_card %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+{% endblock head %}
+
+{% block content %}
+  {% include 'home/hero.html' %}
+
+  <section class="carousel--full">
+
+    {% for cause in causes %}
+      <div class="carousel__element">
+        {{ cause_card(cause) }}
+      </div>
+    {% endfor %}
+
+  </section>
+
+  <section class="more--full">
+    <div class="row">
+      <div class="column small-12">
+        <a href="{{ url_for('all_causes') }}" class="button" id="see-all-causes">See All Causes</a>
+      </div>
+    </div>
+  </section>
+
+  {% include 'home/about.html' %}
+{% endblock content %}
+
+{% block footer %}
+  {{ super() }}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+  <script type="text/javascript" src="static/js/slick-init.js"></script>
+{% endblock footer %}

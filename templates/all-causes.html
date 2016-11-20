@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% from 'macros.html' import cause_card %}
+
+{% block content %}
+  {% include 'home/hero.html' %}
+
+  <section class="grid--full">
+    <div class="row">
+
+    {% for cause in causes %}
+      <div class="grid__element small-12 medium-6 large-4">
+        {{ cause_card(cause) }}
+      </div>
+    {% endfor %}
+
+    </div>
+  </section>
+
+  {% include 'home/about.html' %}
+{% endblock content %}

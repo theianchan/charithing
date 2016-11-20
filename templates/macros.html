@@ -1,0 +1,27 @@
+{% macro cause_card(data) %}
+<div class="card" data-open="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal">
+  <div class="card__overlay">
+    <div class="card__overlay-content">
+      <span class="card__meta">{{ data.name }}</span>
+      <h4 class="card__subtitle">Why care?</h4>
+      <p>{{ data['why-care'] }}</p>
+      <h4 class="card__subtitle">Why now?</h4>
+      <p>{{ data['why-now'] }}</p>
+    </div>
+  </div>
+  <h3 class="card__title">{{ data.name }}</h3>
+  <img class="card__icon" src="static/img/emoji__{{ data.emoji }}.png" alt="{{ data.name }} Icon">
+</div>
+<div class="reveal" id="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal" data-reveal>
+  <h3>{{ data.name }}</h3>
+  <p>{{ data['more-info'] }}</p>
+  <a href="#">Find a national org</a>
+  <p>{{ data.national }}</p>
+  <a href="#">Find a local org</a>
+  <p>{{ data.local }}</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endmacro %}
+

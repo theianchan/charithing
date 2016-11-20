@@ -1,0 +1,38 @@
+html,
+body {
+  font-family: $sans-serif;
+  font-weight: $fw--regular;
+  color: $blue-grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif;
+  font-weight: $fw--black;
+  color: $black;
+}
+
+blockquote,
+cite {
+  color: $blue-grey;
+}
+
+a {
+  color: $blue--light;
+}
+
+blockquote {
+  font-size: 28px;
+  font-weight: $fw--black;
+  padding: 0;
+  border-left: none;
+}
+
+cite {
+  font-size: 14px;
+  font-weight: $fw--regular;
+}

@@ -1,0 +1,68 @@
+.card {
+  position: relative;
+  width: 95%;
+  margin: $mg--xs auto;
+  cursor: pointer;
+  background-color: $white;
+  box-shadow: $shadow--lg;
+  .card__title {
+    font-size: 30px;
+    line-height: 36px;
+    padding-top: $mg--lg + 15px;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: $blue-grey;
+  }
+  .card__icon {
+    display: block;
+    width: 100px;
+    height: 100px + $mg--lg + 30px;
+    margin: $mg--md auto 0;
+    padding-bottom: $mg--lg + 30px;
+  }
+  @media (min-width: $medium) {
+    .card__title {
+      padding-top: $mg--lg;
+    }
+    .card__icon {
+      height: 100px + $mg--lg + 15px;
+      padding-bottom: $mg--lg + 15px;
+    }
+  }
+}
+
+.card__overlay {
+  transition: all 300ms;
+  position: absolute;
+  padding: 0 $mg--sm + 5px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: $white;
+  background-color: $blue-grey;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover {
+  .card__overlay {
+    opacity: 1;
+    transition: all 150ms;
+  }
+}
+
+.card__overlay-content {
+  display: flex;
+  flex-direction: column;
+  .card__subtitle {
+    color: $white;
+    margin: $mg--sm 0 $mg--xs;
+    line-height: 1;
+  }
+  p {
+    line-height: 1.25;
+    margin-bottom: 0;
+  }
+}

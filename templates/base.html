@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% if title %}{{ title }} | {% endif %}Charithing</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation-flex.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,900">
+  <link rel="stylesheet" href="static/css/index.css">
+  {% endblock head %}
+</head>
+<body>
+
+  {% block top_bar %}
+  <section class="top-bar--full">
+    <div class="row">
+      <div class="column small-12 top-bar">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <li><a href="{{ url_for('index') }}"><h1>Our Logo</h1></a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock top_bar %}
+
+  {% block content %}
+  {% endblock content %}
+
+  {% block footer %}
+  <section class="footer--full">
+    <div class="row">
+      <div class="column small-12">
+        <ul class="menu">
+          <li>Follow us on Snapchat or whatever</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="static/js/smooth-scroll.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  {% endblock footer %}
+
+</body>
+</html>
