@@ -98,5 +98,9 @@ def index():
 def all_causes():
     return render_template('all-causes.html', title="All Causes", causes=causes)
 
+@app.route('/search')
+def search():
+    return render_template('search.html', title="National Women's Health Organizations", causes=causes)
+
 if __name__ == '__main__':
     app.run(debug=DEBUG, host=HOST, port=PORT)

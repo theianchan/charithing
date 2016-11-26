@@ -21,7 +21,7 @@ $('.carousel--full').slick({
       centerPadding: '50px'
     }
   }, {
-    breakpoint: 640,
+    breakpoint: 700,
     settings: {
       slidesToShow: 1,
       centerPadding: '25px'

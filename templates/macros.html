@@ -2,7 +2,10 @@
 <div class="card" data-open="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal">
   <div class="card__overlay">
     <div class="card__overlay-content">
-      <span class="card__meta">{{ data.name }}</span>
+      <div class="row align-justify">
+        <span class="column shrink card__meta">{{ data.name }}</span>
+        <span class="column shrink card__meta">See More</span>
+      </div>
       <h4 class="card__subtitle">Why care?</h4>
       <p>{{ data['why-care'] }}</p>
       <h4 class="card__subtitle">Why now?</h4>
@@ -12,6 +15,7 @@
   <h3 class="card__title">{{ data.name }}</h3>
   <img class="card__icon" src="static/img/emoji__{{ data.emoji }}.png" alt="{{ data.name }} Icon">
 </div>
+
 <div class="reveal" id="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal" data-reveal>
   <h3>{{ data.name }}</h3>
   <p>{{ data['more-info'] }}</p>
