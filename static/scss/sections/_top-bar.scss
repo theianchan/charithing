@@ -1,14 +1,14 @@
 .top-bar,
 .top-bar ul {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .top-bar {
-  h1 {
-    font-size: 1rem;
-    font-weight: $fw--regular;
-  }
-  .menu a {
-    color: $blue-grey;
-  }
+    h1 {
+        font-size: 1rem;
+        font-weight: $fw--regular;
+    }
+    .menu a {
+        color: $blue-grey;
+    }
 }

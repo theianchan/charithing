@@ -1,0 +1,43 @@
+.settings--full {
+    margin-bottom: $mg--md;
+    .settings__header {
+        margin: $mg--sm 0 $mg--xs;
+    }
+    .settings__option {
+        display: inline-block;
+        input {
+            display: none;
+            &:checked + label {
+                background-color: $selected;
+            }
+        }
+        label {
+            line-height: 1;
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            height: 40px;
+            margin: 0 $mg--xs $mg--xs 0;
+            padding: $mg--xs;
+            transition-duration: 200ms;
+            border-radius: 4px;
+
+            align-items: center;
+            &:hover,
+            &:focus {
+                background-color: $selected;
+            }
+            img {
+                width: 16px;
+                height: auto;
+                margin: 0 $mg--xs 0 0;
+            }
+        }
+    }
+    .settings__submit {
+        margin: $mg--md 0 0;
+    }
+}
+
+.results--full {
+}

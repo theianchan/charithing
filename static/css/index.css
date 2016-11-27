@@ -70,18 +70,48 @@ cite {
   margin: 0 0 120px; }
 
 .about--full {
-  margin: 0 0 120px; }
-  @media (min-width: 64em) {
-    .about--full {
-      margin-bottom: 180px; } }
+  margin: 0; }
   .about--full h5 {
-    color: #607D8B;
-    margin-top: 35px; }
+    margin-top: 35px;
+    color: #607D8B; }
 
 .footer--full {
-  margin: 0 0 15px; }
+  margin: 120px 0 15px; }
+  @media (min-width: 64em) {
+    .footer--full {
+      margin-top: 180px; } }
   .footer--full blockquote {
     margin-bottom: 75px; }
+
+.settings--full {
+  margin-bottom: 35px; }
+  .settings--full .settings__header {
+    margin: 15px 0 8px; }
+  .settings--full .settings__option {
+    display: inline-block; }
+    .settings--full .settings__option input {
+      display: none; }
+      .settings--full .settings__option input:checked + label {
+        background-color: rgba(117, 117, 117, 0.15); }
+    .settings--full .settings__option label {
+      line-height: 1;
+      display: flex;
+      flex-direction: row;
+      width: 200px;
+      height: 40px;
+      margin: 0 8px 8px 0;
+      padding: 8px;
+      transition-duration: 200ms;
+      border-radius: 4px;
+      align-items: center; }
+      .settings--full .settings__option label:hover, .settings--full .settings__option label:focus {
+        background-color: rgba(117, 117, 117, 0.15); }
+      .settings--full .settings__option label img {
+        width: 16px;
+        height: auto;
+        margin: 0 8px 0 0; }
+  .settings--full .settings__submit {
+    margin: 35px 0 0; }
 
 .button {
   font-size: 18px;
@@ -91,14 +121,14 @@ cite {
   background-color: #03A9F4;
   box-shadow: 0 1.5px 5px 0 rgba(117, 117, 117, 0.5); }
 
-.card {
+.cause-card {
   position: relative;
   width: 95%;
   margin: 8px auto;
   cursor: pointer;
   background-color: #FFFFFF;
   box-shadow: 0 3px 6px 0 rgba(117, 117, 117, 0.75); }
-  .card .card__title {
+  .cause-card .cause-card__title {
     font-size: 30px;
     line-height: 36px;
     display: block;
@@ -107,20 +137,24 @@ cite {
     padding-top: 90px;
     text-align: center;
     color: #607D8B; }
-  .card .card__icon {
+  .cause-card .cause-card__icon {
     display: block;
     width: 100px;
     height: 205px;
     margin: 35px auto 0;
     padding-bottom: 105px; }
   @media (min-width: 40em) {
-    .card .card__title {
+    .cause-card .cause-card__title {
       padding-top: 75px; }
-    .card .card__icon {
+    .cause-card .cause-card__icon {
       height: 190px;
       padding-bottom: 90px; } }
 
-.card__overlay {
+.cause-card:hover .cause-card__overlay {
+  transition: all 150ms;
+  opacity: 1; }
+
+.cause-card__overlay {
   position: absolute;
   display: flex;
   width: 100%;
@@ -131,24 +165,19 @@ cite {
   color: #FFFFFF;
   background-color: #607D8B;
   align-items: center; }
-
-.card:hover .card__overlay {
-  transition: all 150ms;
-  opacity: 1; }
-
-.card__overlay-content {
-  display: flex;
-  flex-direction: column; }
-  .card__overlay-content .row {
-    margin-left: -.9375rem;
-    margin-right: -.9375rem; }
-  .card__overlay-content .card__subtitle {
-    line-height: 1;
-    margin: 15px 0 8px;
-    color: #FFFFFF; }
-  .card__overlay-content p {
-    line-height: 1.25;
-    margin-bottom: 0; }
+  .cause-card__overlay .cause-card__overlay-content {
+    display: flex;
+    flex-direction: column; }
+    .cause-card__overlay .cause-card__overlay-content .row {
+      margin-right: -.9375rem;
+      margin-left: -.9375rem; }
+    .cause-card__overlay .cause-card__overlay-content .cause-card__subtitle {
+      line-height: 1;
+      margin: 15px 0 8px;
+      color: #FFFFFF; }
+    .cause-card__overlay .cause-card__overlay-content p {
+      line-height: 1.25;
+      margin-bottom: 0; }
 
 .emoji {
   display: inline-block; }

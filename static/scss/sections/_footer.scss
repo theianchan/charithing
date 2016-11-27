@@ -1,6 +1,9 @@
 .footer--full {
-  margin: 0 0 $mg--sm;
-  blockquote {
-    margin-bottom: $mg--lg;
-  }
+    margin: $mg--x-lg 0 $mg--sm;
+    @media (min-width: $large) {
+        margin-top: $mg--xx-lg;
+    }
+    blockquote {
+        margin-bottom: $mg--lg;
+    }
 }

@@ -3,6 +3,7 @@ $sans-serif : "Lato", sans-serif;
 $fw--regular: 400;
 $fw--black  : 900;
 
+$amber      : #FFC107;
 $blue--light: #03A9F4;
 $blue-grey  : #607D8B;
 
@@ -12,6 +13,8 @@ $black      : #212121;
 
 $shadow--lg : 0 3px 6px 0 rgba($grey--dark, 0.75);
 $shadow--sm : 0 1.5px 5px 0 rgba($grey--dark, 0.5);
+
+$selected   : rgba($grey--dark, 0.15);
 
 $medium     : 40em;
 $large      : 64em;

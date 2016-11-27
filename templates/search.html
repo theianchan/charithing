@@ -2,4 +2,55 @@
 
 {% block content %}
 
+<section class="suggested--full">
+
+</section>
+
+<section class="settings--full">
+    <div class="row">
+        <div class="column small-12">
+            <form action="">
+                <h3 class="settings__header">Causes</h3>
+                <fieldset>
+                {% for cause in causes %}
+                    <div class="settings__option">
+                        <input type="checkbox" name="cause" id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
+                        <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
+                            <img src="static/img/emoji__{{ cause.emoji }}.png">
+                            {{ cause.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+                </fieldset>
+                <h3 class="settings__header">Scope</h3>
+                <fieldset>
+                    <div class="settings__option">
+                        <input type="checkbox" name="scope" id="national">
+                        <label for="national">National</label>
+                    </div>
+                    <div class="settings__option">
+                        <input type="checkbox" name="scope" id="local">
+                        <label for="local">Local</label>
+                    </div>
+                </fieldset>
+                <button class="button settings__submit" type="submit">Update Results</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="results--full">
+    <div class="row">
+        <div class="column small-12">
+            <hr>
+            {% if results %}
+
+            {% else %}
+            {% include 'search/not-found.html' %}
+            {% endif %}
+            <hr>
+        </div>
+    </div>
+</section>
+
 {% endblock content %}

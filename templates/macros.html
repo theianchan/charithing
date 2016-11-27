@@ -1,31 +1,39 @@
 {% macro cause_card(data) %}
-<div class="card" data-open="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal">
-  <div class="card__overlay">
-    <div class="card__overlay-content">
+<div class="cause-card" data-open="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal">
+  <div class="cause-card__overlay">
+    <div class="cause-card__overlay-content">
       <div class="row align-justify">
-        <span class="column shrink card__meta">{{ data.name }}</span>
-        <span class="column shrink card__meta">See More</span>
+        <span class="column shrink cause-card__meta">{{ data.name }}</span>
+        <span class="column shrink cause-card__meta">See More</span>
       </div>
-      <h4 class="card__subtitle">Why care?</h4>
+      <h4 class="cause-card__subtitle">Why care?</h4>
       <p>{{ data['why-care'] }}</p>
-      <h4 class="card__subtitle">Why now?</h4>
+      <h4 class="cause-card__subtitle">Why now?</h4>
       <p>{{ data['why-now'] }}</p>
     </div>
   </div>
-  <h3 class="card__title">{{ data.name }}</h3>
-  <img class="card__icon" src="static/img/emoji__{{ data.emoji }}.png" alt="{{ data.name }} Icon">
+  <h3 class="cause-card__title">{{ data.name }}</h3>
+  <img class="cause-card__icon" src="static/img/emoji__{{ data.emoji }}.png" alt="{{ data.name }} Emoji">
 </div>
 
 <div class="reveal" id="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal" data-reveal>
   <h3>{{ data.name }}</h3>
   <p>{{ data['more-info'] }}</p>
-  <a href="#">Find a national org</a>
+  <a href="{{  url_for('search')  }}">Find a national org</a>
   <p>{{ data.national }}</p>
-  <a href="#">Find a local org</a>
+  <a href="{{  url_for('search')  }}">Find a local org</a>
   <p>{{ data.local }}</p>
+  <a href="{{  url_for('search')  }}">Both work for me</a>
+  <p>Yo I just want to help get these options outta my face.</p>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 {% endmacro %}
 
+{% macro result_card() %}
+<div class="result-card">
+
+</div>
+
+{% endmacro %}
