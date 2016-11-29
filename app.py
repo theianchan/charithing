@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import requests, json
 
 causes = [
     {
@@ -8,7 +9,9 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 1
+
     },
     {
         "name"     : "Immigration Rights",
@@ -17,7 +20,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 2
     },
     {
         "name"     : "Marriage Equality",
@@ -26,7 +30,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 3
     },
     {
         "name"     : "Environmental Issues",
@@ -35,7 +40,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 4
     },
     {
         "name"     : "Blue Collar Opportunity",
@@ -44,7 +50,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 5
     },
     {
         "name"     : "Public Policy Research",
@@ -53,7 +60,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 6
     },
     {
         "name"     : "Pro-Family Work Policy",
@@ -62,7 +70,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 7
     },
     {
         "name"     : "Education For All",
@@ -71,7 +80,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 8
     },
     {
         "name"     : "Internet Freedom",
@@ -80,7 +90,8 @@ causes = [
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!"
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 9
     }
 ]
 
@@ -100,7 +111,28 @@ def all_causes():
 
 @app.route('/search')
 def search():
-    return render_template('search.html', title="National Women's Health Organizations", causes=causes)
+    cause = request.args.get("cause")
+    results = ""
+
+    if cause:
+        url = "http://api.charitynavigator.org/api/v1/search"
+        querystring = {
+            "category": cause,
+            "app_key" :"73973e687b179c033a5a40981816be38",
+            "app_id"  :"1b9235b1"
+        }
+        headers = {
+            'cache-control': "no-cache",
+            'postman-token': "8511474e-ec22-6f90-554a-b1b541c627d7"
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring).text
+        results = json.loads(response)
+        results = results["objects"][:3]
+
+        # TODO
+        # check if response is 200 before processing response
+
+    return render_template('search.html', title="Search Page", causes=causes, results=results)
 
 if __name__ == '__main__':
     app.run(debug=DEBUG, host=HOST, port=PORT)
