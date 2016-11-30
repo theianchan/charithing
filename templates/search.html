@@ -11,7 +11,7 @@
         <div class="column small-12">
             <form action="">
                 <h3 class="settings__header">Causes</h3>
-                <fieldset class="causes">
+                <fieldset class="cause">
                 {% for cause in causes %}
                     <div class="settings__option">
                         <input
@@ -29,11 +29,17 @@
                 <h3 class="settings__header">Scope</h3>
                 <fieldset class="scope">
                     <div class="settings__option">
-                        <input type="checkbox" name="scope" id="national">
+                        <input type="checkbox"
+                            name="scope"
+                            value="national"
+                            id="national">
                         <label for="national">National</label>
                     </div>
                     <div class="settings__option">
-                        <input type="checkbox" name="scope" id="local">
+                        <input type="checkbox"
+                            name="scope"
+                            value="local"
+                            id="local">
                         <label for="local">Local</label>
                     </div>
                 </fieldset>

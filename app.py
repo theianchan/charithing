@@ -115,20 +115,20 @@ def search():
     selected = request.args.get("cause")
     results = ""
 
-    # if selected:
-    #     url = "http://api.charitynavigator.org/api/v1/search"
-    #     querystring = {
-    #         "category": selected,
-    #         "app_key" :"73973e687b179c033a5a40981816be38",
-    #         "app_id"  :"1b9235b1"
-    #     }
-    #     headers = {
-    #         "cache-control": "no-cache",
-    #         "postman-token": "8511474e-ec22-6f90-554a-b1b541c627d7"
-    #     }
-    #     response = requests.request("GET", url, headers=headers, params=querystring).text
-    #     results = json.loads(response)
-    #     results = results["objects"][:3]
+    if selected:
+        url = "http://api.charitynavigator.org/api/v1/search"
+        querystring = {
+            "category": selected,
+            "app_key" :"73973e687b179c033a5a40981816be38",
+            "app_id"  :"1b9235b1"
+        }
+        headers = {
+            "cache-control": "no-cache",
+            "postman-token": "8511474e-ec22-6f90-554a-b1b541c627d7"
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring).text
+        results = json.loads(response)
+        results = results["objects"][:3]
 
         # TODO
         # check if response is 200 before processing response
