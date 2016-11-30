@@ -1,5 +1,4 @@
 var getParameterByName = function(name, url) {
-    console.log("3");
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -10,13 +9,9 @@ var getParameterByName = function(name, url) {
 }
 
 var showUserSelected = function(selector) {
-    console.log("2");
     var selection = getParameterByName(selector);
-    console.log("4");
     if (selection) {
-        console.log("5");
         $("." + selector + " input[value=" + selection + "]").prop("checked", true);
-        console.log("6");
     }
 }
 
@@ -30,7 +25,6 @@ var showLoading = function() {
 
 $(document).ready(function() {
     showLoading();
-    console.log("1");
     showUserSelected("cause");
     showUserSelected("scope");
 });
