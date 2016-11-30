@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-import requests, json
+import requests
+import json
 
 causes = [
     {
@@ -97,42 +98,45 @@ causes = [
 
 DEBUG = True
 PORT = 8000
-HOST = '0.0.0.0'
+HOST = "0.0.0.0"
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html', causes=causes)
+    return render_template("index.html", causes=causes)
 
-@app.route('/all-causes')
+@app.route("/all-causes")
 def all_causes():
-    return render_template('all-causes.html', title="All Causes", causes=causes)
+    return render_template("all-causes.html", title="All Causes", causes=causes)
 
-@app.route('/search')
+@app.route("/search")
 def search():
-    cause = request.args.get("cause")
+    selected = request.args.get("cause")
     results = ""
 
-    if cause:
-        url = "http://api.charitynavigator.org/api/v1/search"
-        querystring = {
-            "category": cause,
-            "app_key" :"73973e687b179c033a5a40981816be38",
-            "app_id"  :"1b9235b1"
-        }
-        headers = {
-            'cache-control': "no-cache",
-            'postman-token': "8511474e-ec22-6f90-554a-b1b541c627d7"
-        }
-        response = requests.request("GET", url, headers=headers, params=querystring).text
-        results = json.loads(response)
-        results = results["objects"][:3]
+    # if selected:
+    #     url = "http://api.charitynavigator.org/api/v1/search"
+    #     querystring = {
+    #         "category": selected,
+    #         "app_key" :"73973e687b179c033a5a40981816be38",
+    #         "app_id"  :"1b9235b1"
+    #     }
+    #     headers = {
+    #         "cache-control": "no-cache",
+    #         "postman-token": "8511474e-ec22-6f90-554a-b1b541c627d7"
+    #     }
+    #     response = requests.request("GET", url, headers=headers, params=querystring).text
+    #     results = json.loads(response)
+    #     results = results["objects"][:3]
 
         # TODO
         # check if response is 200 before processing response
 
-    return render_template('search.html', title="Search Page", causes=causes, results=results)
+    return render_template(
+        "search.html", title="Results",
+        causes=causes, selected=selected, results=results
+    )
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=DEBUG, host=HOST, port=PORT)

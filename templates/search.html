@@ -14,7 +14,11 @@
                 <fieldset class="causes">
                 {% for cause in causes %}
                     <div class="settings__option">
-                        <input type="checkbox" name="cause" value="{{ cause.cause_id }}" id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
+                        <input
+                            type="checkbox"
+                            name="cause"
+                            value="{{ cause.cause_id }}"
+                            id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
                         <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
                             <img src="static/img/emoji__{{ cause.emoji }}.png">
                             {{ cause.name }}
@@ -39,7 +43,18 @@
     </div>
 </section>
 
-<section class="results--full">
+<section class="loading--full" id="loading">
+    <div class="row">
+        <div class="column small-12">
+            <p>Searching for your results...</p>
+            <video muted="" autoplay loop="" poster="" class="res-media-zoomable">
+                <source src="http://i.imgur.com/CR6r35u.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<section class="results--full" id="results">
     <div class="row">
         <div class="column small-12">
             <hr>
