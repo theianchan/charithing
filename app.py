@@ -25,8 +25,8 @@ causes = [
         "cause_id" : 2
     },
     {
-        "name"     : "Marriage Equality",
-        "emoji"    : "two-women",
+        "name"     : "Freedom of the Press",
+        "emoji"    : "detective-6",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
@@ -36,7 +36,7 @@ causes = [
     },
     {
         "name"     : "Environmental Issues",
-        "emoji"    : "tree",
+        "emoji"    : "globe",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
@@ -46,7 +46,7 @@ causes = [
     },
     {
         "name"     : "Blue Collar Opportunity",
-        "emoji"    : "worker",
+        "emoji"    : "worker-1",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
@@ -55,8 +55,8 @@ causes = [
         "cause_id" : 5
     },
     {
-        "name"     : "Public Policy Research",
-        "emoji"    : "microscope",
+        "name"     : "Civil Rights Preservation",
+        "emoji"    : "courthouse",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
@@ -65,8 +65,8 @@ causes = [
         "cause_id" : 6
     },
     {
-        "name"     : "Pro-Family Work Policy",
-        "emoji"    : "family",
+        "name"     : "Conflicts of Interest",
+        "emoji"    : "money",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
@@ -85,8 +85,8 @@ causes = [
         "cause_id" : 8
     },
     {
-        "name"     : "Internet Freedom",
-        "emoji"    : "connected",
+        "name"     : "Internet Rights",
+        "emoji"    : "lock",
         "why-care" : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now"  : "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
