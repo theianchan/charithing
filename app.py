@@ -11,7 +11,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 1
+        "cause_id" : 12
 
     },
     {
@@ -22,7 +22,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 2
+        "cause_id" : 21
     },
     {
         "name"     : "Freedom of the Press",
@@ -32,7 +32,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 3
+        "cause_id" : 5
     },
     {
         "name"     : "Environmental Issues",
@@ -42,7 +42,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 4
+        "cause_id" : 11
     },
     {
         "name"     : "Blue Collar Opportunity",
@@ -52,7 +52,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 5
+        "cause_id" : 29
     },
     {
         "name"     : "Civil Rights Preservation",
@@ -62,7 +62,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 6
+        "cause_id" : 21
     },
     {
         "name"     : "Conflicts of Interest",
@@ -72,7 +72,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 7
+        "cause_id" : 21
     },
     {
         "name"     : "Education For All",
@@ -82,7 +82,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 8
+        "cause_id" : 7
     },
     {
         "name"     : "Internet Rights",
@@ -92,7 +92,7 @@ causes = [
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
         "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
         "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id" : 9
+        "cause_id" : 5
     }
 ]
 
