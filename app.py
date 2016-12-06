@@ -12,10 +12,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 1
-
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 12
     },
     {
         "name": "Immigration Rights",
@@ -23,9 +22,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 2
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 21
     },
     {
         "name": "Freedom of the Press",
@@ -33,9 +32,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 3
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 5
     },
     {
         "name": "Environmental Issues",
@@ -43,9 +42,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 4
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 11
     },
     {
         "name": "Blue Collar Opportunity",
@@ -53,9 +52,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 5
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 29
     },
     {
         "name": "Civil Rights Preservation",
@@ -63,9 +62,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 6
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 21
     },
     {
         "name": "Conflicts of Interest",
@@ -73,9 +72,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 7
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 21
     },
     {
         "name": "Education For All",
@@ -83,9 +82,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 8
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 7
     },
     {
         "name": "Internet Rights",
@@ -93,9 +92,9 @@ causes = [
         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-        "cause_id": 9
+        "national" : "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local"    : "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id" : 5
     }
 ]
 
@@ -205,8 +204,8 @@ def search():
         url = "http://api.charitynavigator.org/api/v1/search"
         querystring = {
             "cause": selected,
-            "app_key": "73973e687b179c033a5a40981816be38",
-            "app_id": "1b9235b1"
+            "app_key" :"73973e687b179c033a5a40981816be38",
+            "app_id"  :"1b9235b1"
         }
         headers = {
             "cache-control": "no-cache",
