@@ -16,8 +16,8 @@
                     <div class="settings__option">
                         <input
                             type="radio"
-                            name="cause"
-                            value="{{ cause.cause_id }}"
+                            name="term"
+                            value="{{ cause.name }}"
                             id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
                         <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
                             <img src="static/img/emoji__{{ cause.emoji }}.png">

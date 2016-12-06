@@ -196,15 +196,15 @@ def all_causes():
 
 @app.route("/search")
 def search():
-    cause = request.args.get("cause")
+    term = request.args.get("term")
     scope = request.args.get("scope")
     # causes = get_causes()
     results = ""
 
-    if cause:
+    if term:
         url = "http://api.charitynavigator.org/api/v1/search"
         querystring = {
-            "cause": cause,
+            "term": term,
             "scope": scope,
             "app_key" :"73973e687b179c033a5a40981816be38",
             "app_id"  :"1b9235b1"
@@ -215,7 +215,8 @@ def search():
         }
 
         response = requests.request(
-            "GET", url, headers=headers, params=querystring).text
+            "GET", url, headers=headers, params=querystring
+        ).text
         results = json.loads(response)
         results = results["objects"][:3]
 
