@@ -17,7 +17,7 @@
                         <input
                             type="radio"
                             name="term"
-                            value="{{ cause.name }}"
+                            value="{{ cause.name|urlencode }}"
                             id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
                         <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
                             <img src="static/img/emoji__{{ cause.emoji }}.png">
@@ -53,9 +53,9 @@
     <div class="row">
         <div class="column small-12">
             <p>Searching for your results...</p>
-            <!-- <video muted="" autoplay loop="" poster="" class="res-media-zoomable">
+            <video muted="" autoplay loop="" poster="" class="res-media-zoomable">
                 <source src="http://i.imgur.com/CR6r35u.mp4" type="video/mp4">
-            </video> -->
+            </video>
         </div>
     </div>
 </section>
@@ -63,21 +63,25 @@
 <section class="results--full" id="results">
     <div class="row">
         <div class="column small-12">
-            <hr>
             {% if results %}
                 {% for result in results %}
-                    <div>
-                        <h3>{{ result.Charity_Name }}</h3>
-                        <p>{{ result.Tag_Line }}</p>
-                        <p>{{ result.city }}, {{ result.state }}</p>
-                        <p>Score: {{ result.OverallScore|int }}</p>
-                        <a href="{{ result.URL }}">URL</a>
+                    <div class="row align-middle results__row">
+                        <div class="shrink column">
+                            <figure>{{ result.OverallScore|int }}
+                                <figcaption>CharityNavigator<br>Score</figcaption>
+                            </figure>
+                        </div>
+                        <div class="column">
+                            <span class="info__loc">{{ result.city }}, {{ result.state }}</span>
+                            <h3 class="info__name">{{ result.Charity_Name }}</h3>
+                            <p class="info__desc">{{ result.Tag_Line }}</p>
+                            <a class="info__link" href="{{ result.URL }}" target="_blank">Learn More</a>
+                        </div>
                     </div>
                 {% endfor %}
             {% else %}
                 {% include 'search/not-found.html' %}
             {% endif %}
-            <hr>
         </div>
     </div>
 </section>

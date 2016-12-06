@@ -19,12 +19,12 @@
 <div class="reveal" id="{{ data.name|replace(' ', '-')|replace('\'','')|lower }}-modal" data-reveal>
   <h3>{{ data.name }}</h3>
   <p>{{ data['more-info'] }}</p>
-  <a href="{{  url_for('search')  }}?cause={{ data.cause_id }}">Find a national org</a>
-  <p>{{ data.national }}</p>
-  <a href="{{  url_for('search')  }}?cause={{ data.cause_id }}">Find a local org</a>
-  <p>{{ data.local }}</p>
-  <a href="{{  url_for('search')  }}?cause={{ data.cause_id }}">Both work for me</a>
-  <p>Yo I just want to help get these options outta my face.</p>
+  <p><a href="{{  url_for('search')  }}?term={{ data.name|urlencode }}?scope=2">Find a national org</a></p>
+  <!-- <p>{{ data.national }}</p> -->
+  <p><a href="{{  url_for('search')  }}?term={{ data.name|urlencode }}?scope=1">Find a regional org</a></p>
+  <!-- <p>{{ data.local }}</p> -->
+  <p><a href="{{  url_for('search')  }}?term={{ data.name|urlencode }}">Both work for me</a></p>
+  <!-- <p>Yo I just want to help get these options outta my face.</p> -->
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>

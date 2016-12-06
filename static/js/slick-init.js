@@ -9,7 +9,7 @@ $('.carousel--full').slick({
   slidesToShow: 4,
 
   responsive: [{
-    breakpoint: 1600,
+    breakpoint: 1700,
     settings: {
       slidesToShow: 3,
       centerPadding: '100px'

@@ -2,8 +2,10 @@ import os
 import sqlite3
 import requests
 import json
+import urllib
 
 from flask import Flask, render_template, request, g
+from markupsafe import Markup
 
 causes = [
     {
@@ -159,6 +161,15 @@ def get_causes():
     return causes
 
 
+@app.template_filter('urlencode')
+def urlencode_filter(s):
+    if type(s) == 'Markup':
+        s = s.unescape()
+    s = s.encode('utf8')
+    s = urllib.quote_plus(s)
+    return Markup(s)
+
+
 @app.route("/")
 def index():
     # db = get_db()
@@ -204,10 +215,11 @@ def search():
     if term:
         url = "http://api.charitynavigator.org/api/v1/search"
         querystring = {
-            "term": term,
-            "scope": scope,
-            "app_key" :"73973e687b179c033a5a40981816be38",
-            "app_id"  :"1b9235b1"
+            "term"   : term,
+            "scope"  : scope,
+            "app_key":"73973e687b179c033a5a40981816be38",
+            "app_id" :"1b9235b1",
+            "limit"  : 5
         }
         headers = {
             "cache-control": "no-cache",
@@ -216,12 +228,10 @@ def search():
 
         response = requests.request(
             "GET", url, headers=headers, params=querystring
-        ).text
-        results = json.loads(response)
-        results = results["objects"][:3]
+        )
 
-        # TODO
-        # check if response is 200 before processing response
+        if response.status_code == requests.codes.ok:
+            results = response.json()["objects"]
 
     return render_template(
         "search.html", title="Results",

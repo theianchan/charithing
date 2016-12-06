@@ -113,6 +113,27 @@ cite {
   .settings--full .settings__submit {
     margin: 35px 0 0; }
 
+.results--full {
+  margin-top: 100px; }
+  .results--full .results__row {
+    border-top: 1px solid #CACACA; }
+    .results--full .results__row .info__loc {
+      font-size: 13px; }
+    .results--full .results__row:last-child {
+      margin-bottom: 0;
+      border-bottom: 1px solid #CACACA; }
+  .results--full figure {
+    text-align: center;
+    font-size: 28px;
+    margin: 1em 5px; }
+    .results--full figure figcaption {
+      font-size: 13px;
+      line-height: 18px; }
+  @media (min-width: 40em) {
+    .results--full figure {
+      font-size: 50px;
+      margin: 1em 50px; } }
+
 .button {
   font-size: 18px;
   font-weight: 900;

@@ -40,4 +40,34 @@
 }
 
 .results--full {
+    margin-top: 100px;
+    .results__row {
+        border-top: 1px solid #CACACA;
+        .info__loc {
+            font-size: 13px;
+        }
+        .info__name {
+            // margin-bottom: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: 1px solid #CACACA;
+        }
+    }
+    figure {
+        text-align: center;
+        font-size: 28px;
+        margin: 1em 5px;
+        figcaption {
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+    @media (min-width: $medium) {
+        figure {
+            font-size: 50px;
+            margin: 1em 50px;
+        }
+    }
+
 }
