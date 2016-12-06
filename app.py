@@ -162,43 +162,43 @@ def get_causes():
 
 @app.route("/")
 def index():
-    db = get_db()
-    db.execute("""
-        ALTER TABLE causes ADD COLUMN
-            (name TEXT,
-            emoji TEXT,
-            why_care TEXT,
-            why_now TEXT,
-            more_info TEXT,
-            national TEXT,
-            local TEXT,
-            cause_id INTEGER);
-        INSERT INTO causes (name, emoji, why_care, why_now, more_info, national, local, cause_id)
-        VALUES (
-            "Internet Rights",
-            "lock",
-            "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
-            "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
-            "You know that cool celebrity that everyone loves? What\'s-his-face from that one movie? Here\'s something they said that was pro-immigration rights! Yeah! Awesome",
-            "Here\'s an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass",
-            "Here\'s an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-            9
-        );
-        """)
-    causes = get_causes()
+    # db = get_db()
+    # db.execute("""
+    #     ALTER TABLE causes ADD COLUMN
+    #         (name TEXT,
+    #         emoji TEXT,
+    #         why_care TEXT,
+    #         why_now TEXT,
+    #         more_info TEXT,
+    #         national TEXT,
+    #         local TEXT,
+    #         cause_id INTEGER);
+    #     INSERT INTO causes (name, emoji, why_care, why_now, more_info, national, local, cause_id)
+    #     VALUES (
+    #         "Internet Rights",
+    #         "lock",
+    #         "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
+    #         "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
+    #         "You know that cool celebrity that everyone loves? What\'s-his-face from that one movie? Here\'s something they said that was pro-immigration rights! Yeah! Awesome",
+    #         "Here\'s an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass",
+    #         "Here\'s an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+    #         9
+    #     );
+    #     """)
+    # causes = get_causes()
     return render_template("index.html", causes=causes)
 
 
 @app.route("/all-causes")
 def all_causes():
-    causes = get_causes()
+    # causes = get_causes()
     return render_template("all-causes.html", title="All Causes", causes=causes)
 
 
 @app.route("/search")
 def search():
     selected = request.args.get("cause")
-    causes = get_causes()
+    # causes = get_causes()
     results = ""
 
     if selected:
