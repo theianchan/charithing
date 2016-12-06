@@ -196,14 +196,16 @@ def all_causes():
 
 @app.route("/search")
 def search():
-    selected = request.args.get("cause")
+    cause = request.args.get("cause")
+    scope = request.args.get("scope")
     # causes = get_causes()
     results = ""
 
-    if selected:
+    if cause:
         url = "http://api.charitynavigator.org/api/v1/search"
         querystring = {
-            "cause": selected,
+            "cause": cause,
+            "scope": scope,
             "app_key" :"73973e687b179c033a5a40981816be38",
             "app_id"  :"1b9235b1"
         }
@@ -222,7 +224,7 @@ def search():
 
     return render_template(
         "search.html", title="Results",
-        causes=causes, selected=selected, results=results
+        causes=causes, results=results
     )
 
 if __name__ == "__main__":
