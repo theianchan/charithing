@@ -11,7 +11,7 @@
         <div class="column small-12">
             <form action="">
                 <h3 class="settings__header">Causes</h3>
-                <fieldset class="cause">
+                <fieldset class="term">
                 {% for cause in causes %}
                     <div class="settings__option">
                         <input
@@ -70,7 +70,7 @@
                         <h3>{{ result.Charity_Name }}</h3>
                         <p>{{ result.Tag_Line }}</p>
                         <p>{{ result.city }}, {{ result.state }}</p>
-                        <p>Score: {{ result.OverallScore }}</p>
+                        <p>Score: {{ result.OverallScore|int }}</p>
                         <a href="{{ result.URL }}">URL</a>
                     </div>
                 {% endfor %}

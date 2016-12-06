@@ -11,7 +11,7 @@ var getParameterByName = function(name, url) {
 var showUserSelected = function(selector) {
     var selection = getParameterByName(selector);
     if (selection) {
-        $("." + selector + " input[value=" + selection + "]").prop("checked", true);
+        $("." + selector + " input[value=\"" + selection + "\"]").prop("checked", true);
     }
 }
 
@@ -25,6 +25,6 @@ var showLoading = function() {
 
 $(document).ready(function() {
     showLoading();
-    showUserSelected("cause");
+    showUserSelected("term");
     showUserSelected("scope");
 });
