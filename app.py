@@ -5,99 +5,99 @@ import json
 
 from flask import Flask, render_template, request, g
 
-# causes = [
-#     {
-#         "name": "Women's Health",
-#         "emoji": "peach",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 1
+causes = [
+    {
+        "name": "Women's Health",
+        "emoji": "peach",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 1
 
-#     },
-#     {
-#         "name": "Immigration Rights",
-#         "emoji": "alien",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 2
-#     },
-#     {
-#         "name": "Freedom of the Press",
-#         "emoji": "detective-6",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 3
-#     },
-#     {
-#         "name": "Environmental Issues",
-#         "emoji": "globe",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 4
-#     },
-#     {
-#         "name": "Blue Collar Opportunity",
-#         "emoji": "worker-1",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 5
-#     },
-#     {
-#         "name": "Civil Rights Preservation",
-#         "emoji": "courthouse",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 6
-#     },
-#     {
-#         "name": "Conflicts of Interest",
-#         "emoji": "money",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 7
-#     },
-#     {
-#         "name": "Education For All",
-#         "emoji": "books",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 8
-#     },
-#     {
-#         "name": "Internet Rights",
-#         "emoji": "lock",
-#         "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
-#         "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
-#         "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
-#         "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
-#         "cause_id": 9
-#     }
-# ]
+    },
+    {
+        "name": "Immigration Rights",
+        "emoji": "alien",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 2
+    },
+    {
+        "name": "Freedom of the Press",
+        "emoji": "detective-6",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 3
+    },
+    {
+        "name": "Environmental Issues",
+        "emoji": "globe",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 4
+    },
+    {
+        "name": "Blue Collar Opportunity",
+        "emoji": "worker-1",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 5
+    },
+    {
+        "name": "Civil Rights Preservation",
+        "emoji": "courthouse",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 6
+    },
+    {
+        "name": "Conflicts of Interest",
+        "emoji": "money",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 7
+    },
+    {
+        "name": "Education For All",
+        "emoji": "books",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 8
+    },
+    {
+        "name": "Internet Rights",
+        "emoji": "lock",
+        "why-care": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "why-now": "People have short attention spans, so this bit shouldn't be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks.",
+        "more-info": "You know that cool celebrity that everyone loves? What's-his-face from that one movie? Here's something they said that was pro-immigration rights! Yeah! Awesome!",
+        "national": "Here's an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass!",
+        "local": "Here's an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+        "cause_id": 9
+    }
+]
 
 DEBUG = True
 PORT = 8000
@@ -155,12 +155,36 @@ def close_db(error):
 def get_causes():
     db = get_db()
     cur = db.execute("select * from causes") # Maybe not correct syntax
+    print cur
     causes = cur.fetchall()
     return causes
 
 
 @app.route("/")
 def index():
+    db = get_db()
+    db.execute("""
+        ALTER TABLE causes ADD COLUMN
+            (name TEXT,
+            emoji TEXT,
+            why_care TEXT,
+            why_now TEXT,
+            more_info TEXT,
+            national TEXT,
+            local TEXT,
+            cause_id INTEGER);
+        INSERT INTO causes (name, emoji, why_care, why_now, more_info, national, local, cause_id)
+        VALUES (
+            "Internet Rights",
+            "lock",
+            "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
+            "People have short attention spans\, so this bit shouldn\'t be much longer than a tweet. 170-ish characters works on every screen I tried. Not too short either - think Goldilocks",
+            "You know that cool celebrity that everyone loves? What\'s-his-face from that one movie? Here\'s something they said that was pro-immigration rights! Yeah! Awesome",
+            "Here\'s an example of something a national org needs your money for. Like legislation! A piece of something important that some senator is trying to pass",
+            "Here\'s an example of something a local org needs your money for.  You could be helping someone in your neighborhood!",
+            9
+        );
+        """)
     causes = get_causes()
     return render_template("index.html", causes=causes)
 
@@ -180,7 +204,7 @@ def search():
     if selected:
         url = "http://api.charitynavigator.org/api/v1/search"
         querystring = {
-            "category": selected,
+            "cause": selected,
             "app_key": "73973e687b179c033a5a40981816be38",
             "app_id": "1b9235b1"
         }
@@ -188,6 +212,7 @@ def search():
             "cache-control": "no-cache",
             "postman-token": "8511474e-ec22-6f90-554a-b1b541c627d7"
         }
+
         response = requests.request(
             "GET", url, headers=headers, params=querystring).text
         results = json.loads(response)

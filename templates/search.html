@@ -15,7 +15,7 @@
                 {% for cause in causes %}
                     <div class="settings__option">
                         <input
-                            type="checkbox"
+                            type="radio"
                             name="cause"
                             value="{{ cause.cause_id }}"
                             id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
@@ -72,7 +72,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-            {% include 'search/not-found.html' %}
+                {% include 'search/not-found.html' %}
             {% endif %}
             <hr>
         </div>
