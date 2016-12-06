@@ -18,8 +18,8 @@
                             type="radio"
                             name="cause"
                             value="{{ cause.cause_id }}"
-                            id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
-                        <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-checkbox">
+                            id="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
+                        <label for="{{ cause.name|replace(' ', '-')|replace('\'', '')|lower }}-radio">
                             <img src="static/img/emoji__{{ cause.emoji }}.png">
                             {{ cause.name }}
                         </label>
@@ -29,14 +29,14 @@
                 <h3 class="settings__header">Scope</h3>
                 <fieldset class="scope">
                     <div class="settings__option">
-                        <input type="checkbox"
+                        <input type="radio"
                             name="scope"
                             value="national"
                             id="national">
                         <label for="national">National</label>
                     </div>
                     <div class="settings__option">
-                        <input type="checkbox"
+                        <input type="radio"
                             name="scope"
                             value="local"
                             id="local">
